@@ -1,0 +1,47 @@
+<div>
+  <h3 class="first">Single User</h3>
+  <div class="ui-g">
+    <div class="ui-g-2">
+      <p-autoComplete [(ngModel)]="spuser" [suggestions]="users" (completeMethod)="filterSPUserSingle($event)" field="DisplayText"
+        [size]="30" placeholder="Find user" [minLength]="3">
+        <ng-template let-spuser pTemplate="item" styleClass="wid100">
+          <div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5">
+            <img class="user-img" src="https://tenant.sharepoint.com/_layouts/15/userphoto.aspx?size=S&accountname={{spuser.EntityData.Email}}"
+            />
+            <div class="user-name">
+              {{spuser.DisplayText}}
+            </div>
+            <div class="user-properties">
+              {{spuser.EntityData.Title}}
+            </div>
+          </div>
+        </ng-template>
+      </p-autoComplete>
+    </div>
+  </div>
+  <span style="margin-left:10px">Selected User: {{spuser ? spuser.DisplayText ||spuser : 'none'}}</span>
+  <h3>Multiple Users</h3>
+  <div>
+    <div>
+      <p-autoComplete [(ngModel)]="spusers" [suggestions]="multipleUsers" (completeMethod)="filterSPUserMultiple($event)" [minLength]="1"
+        placeholder="Find Users" field="DisplayText" [multiple]="true">
+        <ng-template let-spuser pTemplate="item" styleClass="wid100">
+          <div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5">
+            <img class="user-img" src="https://tenant.sharepoint.com/_layouts/15/userphoto.aspx?size=S&accountname={{spuser.EntityData.Email}}"
+            />
+            <div class="user-name">
+              {{spuser.DisplayText}}
+            </div>
+            <div class="user-properties">
+              {{spuser.EntityData.Title}}
+            </div>
+          </div>
+        </ng-template>
+      </p-autoComplete>
+    </div>
+  </div>
+  <span style="margin-left:10px">Selected Users: </span>
+  <!-- <ul>
+        <li *ngFor="let user of spusers">{{user.DisplayText}}</li>
+    </ul> -->
+</div>

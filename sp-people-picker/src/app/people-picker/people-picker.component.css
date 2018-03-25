@@ -1,0 +1,17 @@
+.user-img {
+    width: 40px;
+    display: inline-block;
+    margin: 5px 0 2px 5px;
+    border-radius: 50%;
+}
+
+.user-name {
+    font-size: 18px;
+    float: right;
+    margin: 10px 10px 0 0;
+}
+
+.user-properties {
+    float: right;
+    font-size: 12px;
+}
