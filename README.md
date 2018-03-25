@@ -1,2 +1,2 @@
 # ng-sp
-Angular Snippets for SharePoint
+Angular Snippets for SharePoint from https://medium.com/ng-sp
