@@ -1,0 +1,6 @@
+{
+    "siteUrl": "https://tenant.sharepoint.com/sites/siteName/",
+    "strategy": "OnlineAddinCredentials",
+    "clientId": "client ID",
+    "clientSecret": "client secret"
+}
