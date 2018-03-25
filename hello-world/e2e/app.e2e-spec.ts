@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('sp-ng App', () => {
+describe('hello-world App', () => {
   let page: AppPage;
 
   beforeEach(() => {
