@@ -3,7 +3,10 @@ import { Http } from '@angular/http';
 import { NgModel } from '@angular/forms';
 import { Response } from '@angular/http';
 import { SPService } from '../services/sp.service';
-import { PeoplePickerResponse, PeoplePickerUser } from '../models/people-picker.response';
+import {
+  PeoplePickerResponse,
+  PeoplePickerUser
+} from '../models/people-picker.response';
 import { PeoplePickerQuery } from '../models/people-picker.query';
 
 @Component({
@@ -15,7 +18,7 @@ export class PeoplePickerComponent implements OnInit {
   constructor(private spService: SPService) {}
   public users: PeoplePickerUser[];
   public multipleUsers: PeoplePickerUser[];
-
+  public BASE_PHOTO_URL: 'https://tenant.sharepoint.com/_layouts/15/userphoto.aspx?size=S&accountname=';
   spuser: PeoplePickerUser;
   spusers: PeoplePickerUser[];
 
@@ -52,21 +55,27 @@ export class PeoplePickerComponent implements OnInit {
       }
     });
 
-    this.spService.getUserSuggestions(this.peoplePickerQuery).subscribe((result: any) => {
-      if (type === 'single') {
-        this.users = [];
-        const allUsers: PeoplePickerUser[] = JSON.parse(result.d.ClientPeoplePickerSearchUser);
-        allUsers.forEach(user => {
-          this.users = [...this.users, user];
-        });
-      } else {
-        this.multipleUsers = [];
-        const allUsers: PeoplePickerUser[] = JSON.parse(result.d.ClientPeoplePickerSearchUser);
-        allUsers.forEach(user => {
-          this.multipleUsers = [...this.multipleUsers, user];
-        });
-      }
-    });
+    this.spService
+      .getUserSuggestions(this.peoplePickerQuery)
+      .subscribe((result: any) => {
+        if (type === 'single') {
+          this.users = [];
+          const allUsers: PeoplePickerUser[] = JSON.parse(
+            result.d.ClientPeoplePickerSearchUser
+          );
+          allUsers.forEach(user => {
+            this.users = [...this.users, user];
+          });
+        } else {
+          this.multipleUsers = [];
+          const allUsers: PeoplePickerUser[] = JSON.parse(
+            result.d.ClientPeoplePickerSearchUser
+          );
+          allUsers.forEach(user => {
+            this.multipleUsers = [...this.multipleUsers, user];
+          });
+        }
+      });
   }
 
   ngOnInit(): void {

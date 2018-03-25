@@ -6,8 +6,7 @@
         [size]="30" placeholder="Find user" [minLength]="3">
         <ng-template let-spuser pTemplate="item" styleClass="wid100">
           <div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5">
-            <img class="user-img" src="https://tenant.sharepoint.com/_layouts/15/userphoto.aspx?size=S&accountname={{spuser.EntityData.Email}}"
-            />
+            <img class="user-img" src="{{BASE_PHOTO_URL+ spuser.EntityData.Email}}" />
             <div class="user-name">
               {{spuser.DisplayText}}
             </div>
@@ -27,8 +26,7 @@
         placeholder="Find Users" field="DisplayText" [multiple]="true">
         <ng-template let-spuser pTemplate="item" styleClass="wid100">
           <div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5">
-            <img class="user-img" src="https://tenant.sharepoint.com/_layouts/15/userphoto.aspx?size=S&accountname={{spuser.EntityData.Email}}"
-            />
+            <img class="user-img" src="{{BASE_PHOTO_URL + spuser.EntityData.Email}}" />
             <div class="user-name">
               {{spuser.DisplayText}}
             </div>
