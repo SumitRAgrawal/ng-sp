@@ -1,0 +1,16 @@
+<p-autoComplete [(ngModel)]="spuser" [suggestions]="users" (completeMethod)="filterSPUserSingle($event)" field="DisplayText"
+  [size]="30" placeholder="Find Customer" [minLength]="3" (onSelect)="emitUser()">
+  <ng-template let-spuser pTemplate="item" styleClass="wid100">
+    <div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5">
+      <img class="user-img" src="https://tenant.sharepoint.com/_layouts/15/userphoto.aspx?size=S&accountname={{spuser.EntityData.Email}}"
+      />
+      <div class="user-name">
+        {{spuser.DisplayText}}
+        <div style="font-size:10px">
+          {{spuser.EntityData.Title}}
+        </div>
+      </div>
+
+    </div>
+  </ng-template>
+</p-autoComplete>

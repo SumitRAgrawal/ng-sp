@@ -1,0 +1,60 @@
+body {
+  background-color: white !important;
+  margin: 0px;
+  font-size: 0.9em !important;
+}
+
+.ui-panel-titlebar {
+  background-color: rgba(156, 39, 176, 1) !important;
+  color: white !important;
+  font-size: 1.3em;
+}
+
+.ui-menu {
+  width: auto !important;
+  margin: 0px !important;
+  border: none !important;
+  background-color: rgba(156, 39, 176, 1) !important;
+}
+
+.ui-button-text,
+.ui-menuitem-text,
+.ui-table-thead {
+  font-size: 1.2em;
+}
+
+.ui-menuitem-text {
+  color: white !important;
+}
+
+.ui-menuitem-icon {
+  color: white !important;
+  font-size: medium !important;
+  margin-right: 1em;
+}
+
+.menu-selected {
+  background-color: #f15b2a !important;
+  color: #ffffff;
+}
+
+body .ui-state-highlight {
+  background-color: rgba(156, 39, 176, 1) !important;
+}
+
+body .ui-state-active {
+  background-color: rgba(156, 39, 176, 1) !important;
+}
+
+body .ui-button {
+  background-color: rgba(156, 39, 176, 1) !important;
+}
+
+.ui-growl-item {
+  background-color: rgba(156, 39, 176, 1) !important;
+  color: #ffffff;
+}
+
+.ui-panel-content {
+  background-color: white !important;
+}

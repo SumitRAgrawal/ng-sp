@@ -1,0 +1,46 @@
+<div class="lower">
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" style="min-width: 600px">
+    <p-panel [header]="header">
+      <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid background" style="margin: 10px 0px">
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-2">
+            Customer Name
+          </div>
+          <div class="ui-grid-col-3">
+            <app-people-picker (spuserEvent)="getUser($event)"></app-people-picker>
+          </div>
+          <div class="ui-grid-col-2">
+            Pizza Name
+          </div>
+          <div class="ui-grid-col-3">
+            <p-dropdown [options]="pizzaOptions" formControlName="pizzaName" placeholder="Select a Pizza" optionLabel="value"></p-dropdown>
+          </div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-2">
+            Quantity
+          </div>
+          <div class="ui-grid-col-3">
+            <input pInputText type="text" formControlName="quantity" />
+          </div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-4"></div>
+          <div class="ui-grid-col-2">
+            <button pButton type="submit" label="SUBMIT" [disabled]="form.invalid"></button>
+          </div>
+          <div class="ui-grid-col-2">
+
+          </div>
+          <div class="ui-grid-col-2">
+            <button pButton type="button" label="CANCEL"></button>
+          </div>
+          <div class="ui-grid-col-4"></div>
+        </div>
+      </div>
+    </p-panel>
+  </form>
+</div>
+<pre class="pretty">
+  {{this.form.value | json}}
+</pre>

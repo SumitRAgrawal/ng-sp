@@ -1,0 +1,72 @@
+#header {
+  background-color: #ffffff;
+  height: 70px;
+  position: fixed;
+  top: 0px;
+  z-index: 99;
+  width: 100%;
+}
+
+#top-logo {
+  height: 60px;
+}
+
+#notifications {
+  color: blue;
+  float: right;
+}
+
+#sidenav,
+#sidenav-mini {
+  height: 100%;
+  position: fixed;
+  top: 60px;
+  padding-left: 0px;
+  padding-top: 1em;
+  background-color: rgba(156, 39, 176, 1) !important;
+}
+
+#content-body {
+  padding-top: 80px;
+  position: absolute;
+  left: 400px;
+  right: 400px;
+}
+
+#sidegutter {
+  width: 340px;
+}
+
+#minigutter {
+  display: none;
+}
+
+/*
+
+@media screen and (min-width: 40.063em) {
+*/
+
+@media only screen and (max-width: 1000px) {
+  #sidegutter {
+    display: none;
+  }
+  #minigutter {
+    display: block;
+  }
+  #content-body {
+    left: 80px;
+  }
+}
+
+/*
+@media only screen and (max-width: 40em) {
+*/
+
+@media only screen and (max-width: 400px) {
+  #sidegutter {
+    display: none;
+  }
+  #minigutter {
+    display: block;
+  }
+}
